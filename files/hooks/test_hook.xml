@@ -28,13 +28,8 @@
     lifetime_randomness="0"
     ragdoll_force_multiplier="0.01"
     hit_particle_force_multiplier="0.25"
-	ground_penetration_coeff="0"
-	ground_penetration_max_durability_to_destroy="0"
     >
   </ProjectileComponent>
-
-  <HookComponent>
-  </HookComponent>
 
     <SpriteComponent 
     _enabled="1" 
@@ -48,7 +43,7 @@
      >
   </SpriteComponent>
 
-  	<!--<MaterialAreaCheckerComponent
+  	<MaterialAreaCheckerComponent
 		  area_aabb.min_x="-3" 
 		  area_aabb.max_x="3" 
 		  area_aabb.min_y="3"   
@@ -61,17 +56,17 @@
 	</MaterialAreaCheckerComponent>
 
 	<LuaComponent
-		script_material_area_checker_success="fishing_emporium/files/fish.lua" >
-	</LuaComponent>-->
+		script_material_area_checker_success="mods/fishing_emporium/files/fish.lua" >
+	</LuaComponent>
   
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="fishing_emporium/files/hooks/test_hook.xml"
+		value_string="mods/fishing_emporium/files/hooks/test_hook.xml"
 		>
 	</VariableStorageComponent>
 
   <!--<LuaComponent
-    script_source_file="fishing_emporium/files/fish.lua"
+    script_source_file="mods/fishing_emporium/files/fish.lua"
     execute_every_n_frames="-1"
   >
   </LuaComponent>-->

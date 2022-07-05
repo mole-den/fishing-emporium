@@ -17,10 +17,10 @@ function material_area_checker_success( pos_x, pos_y )
     end
 
     if (EntityHasTag(hook, "hook_s1")) then
-        wait_time = math.random(60, 120)
+        wait_time = wait_time + math.random(60, 120)
 
     else if (EntityHasTag(hook, "hook_s2")) then
-        wait_time = math.random(60, 80)
+        wait_time = wait_time + math.random(60, 80)
 
     end
     end
