@@ -1,10 +1,13 @@
 dofile_once("data/scripts/lib/utilities.lua")
 
 function material_area_checker_success( pos_x, pos_y )
-    local hook    = GetUpdatedEntityID()
+    local hook = GetUpdatedEntityID()
     local x, y = EntityGetTransform( GetUpdatedEntityID() )
         
     local wait_time = 0
+
+    local vel_comp = EntityGetFirstComponent(hook, "VelocityComponent")
+    ComponentSetValue2(vel_comp, "mVelocity", 0, -50)
 
     GamePrint("fishe")
 

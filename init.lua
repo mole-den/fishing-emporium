@@ -1,6 +1,6 @@
 ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/fishing_emporium/files/actions.lua" )
 
-local nxml = dofile_once("mods/mould_n/lib/nxml.lua")
+local nxml = dofile_once("mods/fishing_emporium/lib/nxml.lua")
 
 function OnModInit()
 	print("Mod - OnModInit()")
@@ -11,7 +11,7 @@ function OnModPostInit()
 end
 
 function OnPlayerSpawned( player_entity )
-
+	GamePrintImportant("Fishing")
 end
 
 function OnWorldPostUpdate()
@@ -24,4 +24,4 @@ end
 
 
 
-GamePrint("Fishing")
+--GamePrint("Fishing")

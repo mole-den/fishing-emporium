@@ -13,6 +13,7 @@ local to_insert = {
         mana               = 10,
         action = function()
             add_projectile("mods/fishing_emporium/files/hooks/test_hook.xml")
+            c.fire_rate_wait = c.fire_rate_wait + 100
         end,
     },
 }
