@@ -9,7 +9,7 @@ function material_area_checker_success( pos_x, pos_y )
         
     local wait_time = 0
 
-    local hooked_fish = {}
+    local hooked_fish;
 
     local vel_comp = EntityGetFirstComponent(hook, "VelocityComponent")
     ComponentSetValue2(vel_comp, "mVelocity", 0, -50)
