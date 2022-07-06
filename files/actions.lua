@@ -1,7 +1,7 @@
 local to_insert = {
 	{
         id                 = "TEST_HOOK",
-        name               = "Test Hook (Tier I Speed I)",
+        name               = "Test Hook (Tier I)",
         description        = "This is a test hook.",
         sprite             = "data/ui_gfx/gun_actions/freezing_gaze.png",
 		sprite_unidentified = "data/ui_gfx/gun_actions/bullet_unidentified.png",

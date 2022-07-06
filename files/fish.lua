@@ -1,47 +1,24 @@
 dofile_once("data/scripts/lib/utilities.lua")
 dofile("mods/fishing_emporium/lib/stringstore.lua")
 dofile("mods/fishing_emporium/lib/noitavariablestore.lua")
-dofile("mods/fishing_emporium/filesfish_list.lua")
+dofile("mods/fishing_emporium/files/fish_list.lua")
 
-function material_area_checker_success( pos_x, pos_y )
+function death( damage_type_bit_field, damage_message, entity_thats_responsible, drop_items )
     local hook = GetUpdatedEntityID()
     local x, y = EntityGetTransform( GetUpdatedEntityID() )
-        
-    local wait_time = 0
+
+    GamePrint("hi")
 
     local hooked_fish;
-
-    local vel_comp = EntityGetFirstComponent(hook, "VelocityComponent")
-    ComponentSetValue2(vel_comp, "mVelocity", 0, -50)
-
-    --GamePrint("fishe")
 
     if (EntityHasTag(hook, "hook_t1")) then
         hooked_fish = get_fish(1)
         
     end
 
-    if (EntityHasTag(hook, "hook_s1")) then
-        wait_time = wait_time + math.random(60, 120)
-
-    else if (EntityHasTag(hook, "hook_s2")) then
-        wait_time = wait_time + math.random(60, 80)
-
-    end
-    end
-
-    --wait
-
 
     GamePrint(hooked_fish)
     GamePrint(hooked_fish["id"])
-
-    EntityKill(hook)
-
-    fish()
-end
-
-function fish()
 
 end
 
