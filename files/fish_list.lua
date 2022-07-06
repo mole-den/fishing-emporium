@@ -10,6 +10,7 @@ fish_list =
             any,
         },
         gold_awarded = 20,
+        blood_money = false,
         rare = false,
     },
 }
