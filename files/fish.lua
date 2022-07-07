@@ -3,6 +3,7 @@ dofile("mods/fishing_emporium/lib/stringstore.lua")
 dofile("mods/fishing_emporium/lib/noitavariablestore.lua")
 dofile("mods/fishing_emporium/files/fish_list.lua")
 
+--make sure to remove tier thing and replace it with biome
 function get_fish(fish_tier)
     local shuffled = {}
     for i, v in ipairs(fish_list) do
@@ -25,11 +26,8 @@ local hooked_fish;
 
 if (EntityHasTag(hook, "in_water")) == false then return end
 
-if (EntityHasTag(hook, "hook_t1")) then
-    hooked_fish = get_fish(1)
-        
-        --check if biome matches? idk
-end
+hooked_fish = get_fish(1)
+
 
 local player = EntityGetWithTag("player_unit")
 local gold_entity = "data/entities/items/pickup/goldnugget_"
