@@ -19,6 +19,7 @@ end
 
 local hook = GetUpdatedEntityID()
 local x, y = EntityGetTransform( GetUpdatedEntityID() )
+--local biome = StatsBiomeGetValue(hook)
 
 local hooked_fish;
 
@@ -34,8 +35,13 @@ local player = EntityGetWithTag("player_unit")
 local gold_entity = "data/entities/items/pickup/goldnugget_"
 local gold_awarded = hooked_fish["gold_awarded"]
 
+if (EntityHasTag(hook, "hook_shiny")) then
+    gold_awarded = gold_awarded * 2
+end
+
 --GamePrint(hooked_fish["id"])
 
+--GamePrint(biome)
 GamePrint("You caught a " .. hooked_fish["name"] .. "!")
 
 --gold

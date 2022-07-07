@@ -11,7 +11,7 @@ function OnModPostInit()
 end
 
 function OnPlayerSpawned( player_entity )
-	GamePrintImportant("Fishing")
+	--GamePrintImportant("Fishing")
 end
 
 function OnWorldPostUpdate()
