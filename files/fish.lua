@@ -26,10 +26,15 @@ local hooked_fish;
 
 if (EntityHasTag(hook, "in_liquid")) == false then return end
 
+--hook liquids
 if (EntityHasTag(hook, "hook_liquid_water")) then
     hooked_fish = get_fish(biome, "water")
 end
+if (EntityHasTag(hook, "hook_liquid_lava")) then
+    hooked_fish = get_fish(biome, "lava")
+end
 
+--rare quirk
 if (EntityHasTag(hook, "hook_rare")) == false then
     if (hooked_fish["rare"]) == true then
         local rare = Math.Random(1, 3)
@@ -77,12 +82,12 @@ end
 
 if money_is_blood == false then
     while gold_awarded >= 10 do
-        EntityLoad( "data/entities/items/pickup/goldnugget_10.xml", x, y )
+        EntityLoad( "data/entities/items/pickup/goldnugget_10.xml", x, y-10 )
         gold_awarded = gold_awarded - 10
     end
 else
     while gold_awarded >= 10 do
-        EntityLoad( "data/entities/items/pickup/bloodmoney_10.xml", x, y )
+        EntityLoad( "data/entities/items/pickup/bloodmoney_10.xml", x, y-10 )
         gold_awarded = gold_awarded - 10
     end
 end

@@ -35,6 +35,24 @@ local to_insert = {
             c.fire_rate_wait = c.fire_rate_wait + 50
         end,
     },
+    {
+        id                 = "MAGMA_HOOK",
+        name               = "Magma Hook",
+        description        = "7 second fishing time. Can be used to fish in lava!",
+        sprite             = "mods/fishing_emporium/files/hooks/magma_hook.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/bullet_unidentified.png",
+		related_projectiles	= {"mods/fishing_emporium/files/hooks/magma_hook.xml"},
+        type               = ACTION_TYPE_PROJECTILE,
+        spawn_level        = "2,3,4",
+        spawn_probability  = "0.2,0.2,0.3",
+        price              = 250,
+        mana               = 30,
+        max_uses           = 25,
+        action = function()
+            add_projectile("mods/fishing_emporium/files/hooks/magma_hook.xml")
+            c.fire_rate_wait = c.fire_rate_wait + 50
+        end,
+    },
 }
 
 for k, v in ipairs(to_insert) do
