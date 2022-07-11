@@ -125,7 +125,7 @@
   
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/fishing_emporium/files/hooks/test_hook.xml"
+		value_string="mods/fishing_emporium/files/hooks/steel_hook.xml"
 		>
 	</VariableStorageComponent>
 

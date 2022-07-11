@@ -3,6 +3,7 @@ dofile("mods/fishing_emporium/files/lib.lua")
 dofile("mods/fishing_emporium/lib/stringstore.lua")
 dofile("mods/fishing_emporium/lib/noitavariablestore.lua")
 dofile("mods/fishing_emporium/files/fish_list.lua")
+--dofile("mods/fishing_emporium/files/biome_list.lua")
 
 function get_fish(fish_biome, fish_liquid)
     local shuffled = {}
@@ -33,6 +34,12 @@ end
 if (EntityHasTag(hook, "hook_liquid_lava")) then
     hooked_fish = get_fish(biome, "lava")
 end
+if (EntityHasTag(hook, "hook_liquid_toxic")) then
+    hooked_fish = get_fish(biome, "radioactive_liquid")
+end
+if (EntityHasTag(hook, "hook_liquid_blood")) then
+    hooked_fish = get_fish(biome, "blood")
+end
 
 --rare quirk
 if (EntityHasTag(hook, "hook_rare")) == false then
@@ -46,10 +53,6 @@ if (EntityHasTag(hook, "hook_rare")) == false then
     end
 end
 
-if (hooked_fish["rare"]) == true then
-    GamePrint("Rare fish caught!")
-end
-
 local player = EntityGetWithTag("player_unit")
 local gold_awarded = hooked_fish["gold_awarded"]
 local money_is_blood = false
@@ -60,7 +63,13 @@ end
 
 GamePrint("You caught a " .. hooked_fish["name"] .. "!")
 GamePrint(hooked_fish["desc"])
---fishe()
+
+if (hooked_fish["rare"]) == true then
+    GamePrint("Rare fish caught!")
+end
+
+funcfishe = hooked_fish["fishe"]
+funcfishe()
 
 if GameHasFlagRun("FE_CAUGHT_" .. hooked_fish["id"]) then
     GamePrint("You have caught this fish before.")
